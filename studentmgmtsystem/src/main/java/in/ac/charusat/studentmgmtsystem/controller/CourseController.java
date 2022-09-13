@@ -31,13 +31,13 @@ public class CourseController {
         courseRepository.delete(courseRepository.findById(id).get());
         return courseRepository.findAll();
     }
+
     @PostMapping("/course")
     public List<Course> addCourse(@RequestBody Course Course) {
         courseRepository.save(Course);
         return courseRepository.findAll();
     }
 
-    // Update the student information
     @PutMapping("/course/{id}")
     public List<Course> updateCourse(@RequestBody Course course, @PathVariable Integer id,@RequestBody String desc) {
         Course courseObj = courseRepository.findById(id).get();
