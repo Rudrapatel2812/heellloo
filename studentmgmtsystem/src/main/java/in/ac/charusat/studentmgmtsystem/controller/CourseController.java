@@ -11,6 +11,8 @@ import java.util.List;
 @RestController
 public class CourseController {
     @Autowired
+
+
     CourseRepository courseRepository;
     @GetMapping("/listCourse")
     public List<Course> getAllCourse(){
